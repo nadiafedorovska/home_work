@@ -4,7 +4,7 @@ from pathlib import Path
 JPEG_iMAGES = []
 PNG_iMAGES = []
 JPG_iMAGES = []
-SVG_iMAGES= []
+SVG_iMAGES = []
 AVI_VIDEO = []
 MP4_VIDEO = [] 
 MOV_VIDEO = []
@@ -15,10 +15,10 @@ TXT_DOCUMENTS = []
 PDF_DOCUMENTS = []
 XLSX_DOCUMENTS = []
 PPTX_DOCUMENTS = []
-MP3_MUSIC = [] 
-OGG_MUSIC = [] 
-WAV_MUSIC = [] 
-AMR_MUSIC = []
+MP3_AUDIO = [] 
+OGG_AUDIO = [] 
+WAV_AUDIO = [] 
+AMR_AUDIO = []
 ZIP_ARCHIVES = []
 GZ_ARCHIVES = []
 TAR_ARCHIVES = []
@@ -26,9 +26,9 @@ MY_OTHER = []
 
 REGISTER_EXTENSION = {
    'JPEG': JPEG_iMAGES ,
-   'PNG': PNG_iMAGES, 
-   'JPG': JPG_iMAGES, 
-   'SVG': SVG_iMAGES,
+   'PNG': PNG_iMAGES , 
+   'JPG': JPG_iMAGES , 
+   'SVG': SVG_iMAGES ,
    'AVI': AVI_VIDEO ,
    'MOV': MOV_VIDEO ,
    'DOC': DOC_DOCUMENTS ,
@@ -37,10 +37,10 @@ REGISTER_EXTENSION = {
    'PDF' : PDF_DOCUMENTS, 
    'XLSX': XLSX_DOCUMENTS ,
    'PPTX': PPTX_DOCUMENTS ,
-   'MP3': MP3_MUSIC , 
-   'OGG': OGG_MUSIC ,
-   'WAV': WAV_MUSIC ,  
-   'AMR': AMR_MUSIC ,
+   'MP3': MP3_AUDIO , 
+   'OGG': OGG_AUDIO ,
+   'WAV': WAV_AUDIO ,  
+   'AMR': AMR_AUDIO ,
    'ZIP': ZIP_ARCHIVES ,
    'GZ': GZ_ARCHIVES ,
    'TAR': TAR_ARCHIVES ,
@@ -56,7 +56,7 @@ def get_extension(name: str):
 def scan(folder: Path):
     for item in folder.iterdir():
         if item.is_dir():
-            if iten.name not in ('archives', 'video', 'audio', 'documents', 'images', 'MY_OTHER'):
+            if item.name not in ('archives', 'video', 'audio', 'documents', 'images', 'MY_OTHER'):
                 FOLDERS.append(item)
                 scan(item)
             continue
@@ -92,10 +92,10 @@ if __name__ == '__main__':
     print(f'Documents pdf: {PDF_DOCUMENTS}')
     print(f'Documents xlsx: {XLSX_DOCUMENTS}')
     print(f'Documents pptx: {PPTX_DOCUMENTS}')
-    print(f'Music mp3: {MP3_MUSIC}')
-    print(f'Music ogg: {OGG_MUSIC}')
-    print(f'Music wav: {WAV_MUSIC}')
-    print(f'Music amr: {AMR_MUSIC}')
+    print(f'Audio mp3: {MP3_AUDIO}')
+    print(f'Audio ogg: {OGG_AUDIO}')
+    print(f'Audio wav: {WAV_AUDIO}')
+    print(f'Audio amr: {AMR_AUDIO}')
     print(f'Archives zip: {ZIP_ARCHIVES}')
     print(f'Archives gz: {GZ_ARCHIVES}')
     print(f'Archives tar: {TAR_ARCHIVES}')

@@ -14,6 +14,4 @@ def normalize(name: str):
     return translate_name
 
 
-filename = "фото.jpg"
-new_filename = normalize(filename)
-print(new_filename)  # Виведе: "foto.jpg"  
+ 
